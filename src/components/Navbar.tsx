@@ -14,6 +14,7 @@ import githublogo from "@/assets/icons/githublogo.png";
 import instagramlogo from "@/assets/icons/instagramlogo.png";
 import linkedinlogo from "@/assets/icons/linkedinlogo.png";
 import rmlogo from "@/assets/rmlogo.png";
+import maillogo from "@/assets/icons/maillogo.png";
 import IconLink from "@/components/IconLink";
 
 // Theme Toggle Button component
@@ -46,7 +47,7 @@ export default function Navbar() {
     },
     {
       href: "mailto:phurinmeng.suo@gmail.com",
-      imgSrc: rmlogo,
+      imgSrc: maillogo,
       alt: "mail",
     },
 

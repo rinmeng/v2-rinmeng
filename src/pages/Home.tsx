@@ -7,8 +7,11 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import { ArrowBigRightIcon } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import Tools from "@/components/Tools";
 
 // Animation configuration - adjust these to control timing
 const CONFIG = {
@@ -74,7 +77,7 @@ const AnimatedText: React.FC = () => {
 
 const Home: React.FC = () => {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <div
         id="landing"
         className="w-screen h-screen relative overflow-hidden animate-fade animate-duration-500"
@@ -121,7 +124,26 @@ const Home: React.FC = () => {
           </Card>
         </div>
       </div>
-    </>
+
+      <Separator className="mt-10" />
+
+      <div className="container  p-10 h-screen mx-auto border-x border-muted">
+        <Card className="">
+          <CardHeader>
+            <CardTitle className="text-6xl text-center font-extralight">
+              Powering creativity
+              <br />
+              with my favorite tools
+            </CardTitle>
+            <CardContent className="text-center">
+              <div>
+                <Tools />
+              </div>
+            </CardContent>
+          </CardHeader>
+        </Card>
+      </div>
+    </div>
   );
 };
 
