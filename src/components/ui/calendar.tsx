@@ -1,10 +1,10 @@
 "use client";
-
+import { ChevronProps } from "react-day-picker";
 import {
-  ChevronDownIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronUpIcon,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
 } from "lucide-react";
 import * as React from "react";
 import { DayFlag, DayPicker, SelectionState, UI } from "react-day-picker";
@@ -68,17 +68,15 @@ export const Calendar = ({
   );
 };
 
-const Chevron = ({ orientation = "left" }) => {
-  switch (orientation) {
-    case "left":
-      return <ChevronLeftIcon className="h-4 w-4" />;
-    case "right":
-      return <ChevronRightIcon className="h-4 w-4" />;
-    case "up":
-      return <ChevronUpIcon className="h-4 w-4" />;
-    case "down":
-      return <ChevronDownIcon className="h-4 w-4" />;
-    default:
-      return null;
+const Chevron = ({ orientation }: ChevronProps) => {
+  if (orientation === "up") {
+    return <ChevronUp className="h-4 w-4" />;
   }
+  if (orientation === "down") {
+    return <ChevronDown className="h-4 w-4" />;
+  }
+  if (orientation === "right") {
+    return <ChevronRight className="h-4 w-4" />;
+  }
+  return <ChevronLeft className="h-4 w-4" />;
 };
