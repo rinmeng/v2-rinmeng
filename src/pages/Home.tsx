@@ -18,9 +18,10 @@ const CONFIG = {
 };
 
 const textArray: string[] = [
+  "Video Editing",
   "Creating Beautiful Websites",
-  "Exploring New UI/UX Designs",
-  "Expanding Web Development Skills",
+  "UI/UX Designs",
+  "Web Development",
   "Learning New Frameworks",
   "Analyzing Data",
   // You can add more items here and they'll work automatically
@@ -85,23 +86,26 @@ const Home: React.FC = () => {
           alt="cover"
         />
 
-        <div className="relative grid grid-cols-1 xl:grid-cols-4 items-center h-full container mx-auto px-6">
+        <div
+          className="relative flex justify-center lg:justify-start items-center 
+        h-full w-full container px-6"
+        >
           <Card
             className="flex flex-col justify-center backdrop-blur-md gap-4 md:gap-6
           bg-white/30 dark:bg-black/30 border border-white/20
-           dark:border-white/10 shadow-lg col-span-3"
+           dark:border-white/10 shadow-lg "
           >
-            <CardHeader>
-              <div>
-                <div className="text-3xl font-bold">
-                  hi! i'm <span>rin</span> and i like{" "}
-                </div>
-                <div className="text-3xl md:text-4xl xl:text-6xl font-bold">
-                  <AnimatedText />
-                </div>
-              </div>
-            </CardHeader>
             <CardContent>
+              <CardHeader>
+                <div>
+                  <div className="text-3xl font-bold">
+                    hi! i'm <span>rin</span> and i like{" "}
+                  </div>
+                  <div className="text-3xl md:text-4xl xl:text-6xl font-bold">
+                    <AnimatedText />
+                  </div>
+                </div>
+              </CardHeader>
               <div className="text-lg">
                 hey there. i'm a ubco student majoring in cs and ds. i'm
                 passionate about building websites with modern technologies.
