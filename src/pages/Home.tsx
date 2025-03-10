@@ -19,7 +19,7 @@ const CONFIG = {
 
 const textArray: string[] = [
   "Video Editing",
-  "Creating Beautiful Websites",
+  "Developing Beautiful Websites",
   "UI/UX Designs",
   "Web Development",
   "Learning New Frameworks",
@@ -52,12 +52,12 @@ const AnimatedText: React.FC = () => {
   );
 
   return (
-    <div className="w-full px-6 h-20 flex items-center overflow-hidden">
-      <div className="relative w-full" key={key}>
+    <div className="min-w-full px-0 md:px-6 h-20 flex items-center overflow-hidden">
+      <div className="relative w-full text-center" key={key}>
         {words.map((word, wordIndex) => (
           <span
             key={wordIndex}
-            className={`inline-block animate-swipe-in-out`}
+            className={`inline-block animate-swipe-in-out text-center`}
             style={{
               animationDelay: `${wordIndex * actualStaggerDelay}s`,
               opacity: 0,
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
 
         <div
           className="relative flex justify-center lg:justify-start items-center 
-        h-full w-full container px-6"
+        h-full w-full container px-4"
         >
           <Card
             className="flex flex-col justify-center backdrop-blur-md gap-4 md:gap-6
@@ -97,10 +97,10 @@ const Home: React.FC = () => {
             <CardContent>
               <CardHeader>
                 <div>
-                  <div className="text-3xl font-bold">
+                  <div className="text-xl md:text-3xl font-bold">
                     hi! i'm <span>rin</span> and i like{" "}
                   </div>
-                  <div className="text-2xl md:text-4xl xl:text-6xl font-bold text-center">
+                  <div className="text-xl sm:text-3xl md:text-4xl xl:text-6xl font-bold text-center w-full">
                     <AnimatedText />
                   </div>
                 </div>
