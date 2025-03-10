@@ -63,7 +63,11 @@ export default function Navbar() {
           <div className=" w-full flex justify-between items-center py-4 px-2 lg:px-4">
             {/* Logo */}
             <Link to="/">
-              <img src={rmlogo} alt="KDT Logo" className="w-16 h-auto" />
+              <img
+                src={rmlogo}
+                alt="KDT Logo"
+                className="w-16 h-auto dark:invert-0 not-dark:invert-100 ml-4"
+              />
             </Link>
 
             <div>
@@ -101,13 +105,13 @@ export default function Navbar() {
                       <Menu />
                     </div>
                   </SheetTrigger>
-                  <SheetContent side="right">
+                  <SheetContent side="right" closeIconSide="left">
                     <SheetHeader className="flex items-center">
-                      <SheetTitle>
+                      <SheetTitle className="mt-10">
                         <img
                           src={rmlogo}
                           alt="KDT Logo"
-                          className="w-28 h-auto mx-auto"
+                          className="w-28 h-auto mx-auto dark:invert-0 not-dark:invert-100"
                         />
                       </SheetTitle>
                     </SheetHeader>
