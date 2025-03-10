@@ -55,7 +55,7 @@ const AnimatedText: React.FC = () => {
   );
 
   return (
-    <div className="min-w-full px-0 md:px-6 h-20 flex items-center overflow-hidden">
+    <div className="font-extralight min-w-full px-0 md:px-6 h-20 flex items-center overflow-hidden">
       <div className="relative w-full text-center" key={key}>
         {words.map((word, wordIndex) => (
           <span
@@ -125,18 +125,21 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <Separator className="mt-10" />
+      <Separator className="my-10" />
 
-      <div className="container  p-10 h-screen mx-auto border-x border-muted">
-        <Card className="">
-          <CardHeader>
-            <CardTitle className="text-6xl text-center font-extralight">
+      <div className=" h-screen w-screen">
+        <Card className="relative gap-0 border-none">
+          <CardHeader className="gap-0 px-0 w-full">
+            <CardTitle
+              className="absolute w-screen mx-0 text-6xl px-0 text-center font-extralight
+              bg-gradient-to-b from-background from-10% via-background/50 via-80% to-transparent to-100% py-20"
+            >
               Powering creativity
               <br />
               with my favorite tools
             </CardTitle>
-            <CardContent className="text-center">
-              <div>
+            <CardContent className="text-center gap-0 px-0">
+              <div className="flex justify-center">
                 <Tools />
               </div>
             </CardContent>
