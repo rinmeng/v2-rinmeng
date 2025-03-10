@@ -100,7 +100,7 @@ const Home: React.FC = () => {
                   <div className="text-3xl font-bold">
                     hi! i'm <span>rin</span> and i like{" "}
                   </div>
-                  <div className="text-3xl md:text-4xl xl:text-6xl font-bold text-center">
+                  <div className="text-2xl md:text-4xl xl:text-6xl font-bold text-center">
                     <AnimatedText />
                   </div>
                 </div>
