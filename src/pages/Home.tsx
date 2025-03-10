@@ -131,7 +131,7 @@ const Home: React.FC = () => {
         <Card className="relative gap-0 border-none">
           <CardHeader className="gap-0 px-0 w-full">
             <CardTitle
-              className="absolute w-screen mx-0 text-6xl px-0 text-center font-extralight
+              className="absolute w-screen mx-0 text-4xl md:text-6xl px-0 text-center font-extralight
               bg-gradient-to-b from-background from-10% via-background/50 via-80% to-transparent to-100% py-20"
             >
               Powering creativity
