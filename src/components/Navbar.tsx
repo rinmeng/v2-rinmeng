@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
 import githublogo from "@/assets/icons/githublogo.png";
 import instagramlogo from "@/assets/icons/instagramlogo.png";
+import linkedinlogo from "@/assets/icons/linkedinlogo.png";
 import rmlogo from "@/assets/rmlogo.png";
 import IconLink from "@/components/IconLink";
 
@@ -53,6 +54,11 @@ export default function Navbar() {
       href: "https://www.github.com/rinmeng/v2-rinmeng",
       imgSrc: githublogo,
       alt: "github",
+    },
+    {
+      href: "https://www.linkedin.com/in/rin-m-b28910234/",
+      imgSrc: linkedinlogo,
+      alt: "linkedin",
     },
   ];
 
