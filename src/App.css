@@ -166,7 +166,7 @@
     }
   }
 
-  --animate-swipe-in-out: swipe-in-out 2s ease-in-out forwards;
+  --animate-swipe-in-out: swipe-in-out 2.5s ease-in-out forwards;
 
   @keyframes swipe-in-out {
     0% {

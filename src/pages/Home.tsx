@@ -12,7 +12,7 @@ import { ArrowBigRightIcon } from "lucide-react";
 
 // Animation configuration - adjust these to control timing
 const CONFIG = {
-  displayDuration: 3000, // How long each phrase stays visible (ms)
+  displayDuration: 2500, // How long each phrase stays visible (ms)
   wordStaggerDelay: 0.1, // Delay between words starting to animate (seconds)
   maxStaggerDelay: 0.7, // Maximum total stagger time to ensure all words animate properly (seconds)
 };
@@ -57,9 +57,8 @@ const AnimatedText: React.FC = () => {
         {words.map((word, wordIndex) => (
           <span
             key={wordIndex}
-            className="inline-block"
+            className={`inline-block animate-swipe-in-out`}
             style={{
-              animation: `swipe-in-out 3s ease-out forwards`,
               animationDelay: `${wordIndex * actualStaggerDelay}s`,
               opacity: 0,
               position: "relative",
