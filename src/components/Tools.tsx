@@ -31,6 +31,7 @@ import CSharpLogo from "@/assets/logos/csharp-svgrepo-com.svg";
 import UnityLogo from "@/assets/logos/unity-svgrepo-com.svg";
 import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
 import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
+import AfterEffectsLogo from "@/assets/logos/after-effects-cc-logo-svgrepo-com.svg";
 
 interface IconItem {
   text: string;
@@ -103,8 +104,17 @@ const Tools: React.FC = () => {
           imgSrc: VercelLogo,
           className: "dark:invert-100 not-dark:invert-0",
         },
+      ],
+    },
+    {
+      row: 5,
+      icons: [
         { text: "Supabase", imgSrc: SupabaseLogo },
         { text: "Firebase", imgSrc: FirebaseLogo },
+        {
+          text: "After Effects",
+          imgSrc: AfterEffectsLogo,
+        },
       ],
     },
   ];
