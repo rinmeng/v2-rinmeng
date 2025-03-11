@@ -203,7 +203,7 @@ const Tools: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col flex-wrap h-screen items-center justify-center">
+    <div className="flex flex-col flex-wrap h-auto">
       {/* Empty rows at top */}
       {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[0].rowIndex)}
       {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[1].rowIndex)}
