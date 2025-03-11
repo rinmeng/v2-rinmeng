@@ -8,67 +8,61 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowBigRightIcon } from "lucide-react";
+import { ArrowBigRightIcon, Layers } from "lucide-react";
 import React from "react";
+
+// Import all logos
+import ViteLogo from "@/assets/logos/vite-svgrepo-com.svg";
+import ReactLogo from "@/assets/logos/react-svgrepo-com.svg";
+import TailwindCSSLogo from "@/assets/logos/tailwindcss-icon-svgrepo-com.svg";
+import ExpressLogo from "@/assets/logos/express-svgrepo-com.svg";
+import ShadCNUILogo from "@/assets/logos/shadcnui-white.svg";
+import DockerLogo from "@/assets/logos/docker-svgrepo-com.svg";
+import NodeJSLogo from "@/assets/logos/node-js-svgrepo-com.svg";
+import PythonLogo from "@/assets/logos/python-svgrepo-com.svg";
+import JavaLogo from "@/assets/logos/java-svgrepo-com.svg";
+import HTML5Logo from "@/assets/logos/html-5-svgrepo-com.svg";
+import CSS3Logo from "@/assets/logos/css-svgrepo-com.svg";
+import GitLogo from "@/assets/logos/git-svgrepo-com.svg";
+import PostgreSQLLogo from "@/assets/logos/postgresql-svgrepo-com.svg";
+import JavaScriptLogo from "@/assets/logos/javascript-svgrepo-com.svg";
+import TypeScriptLogo from "@/assets/logos/typescript-svgrepo-com.svg";
+import VercelLogo from "@/assets/logos/vercel-fill-white.svg";
+import SupabaseLogo from "@/assets/logos/supabase-seeklogo.svg";
+import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
+import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
+
+// import images
+import KDT from "@/assets/projects/KDT.png";
 
 interface ProjectFragmentProps {
   title: string;
+  stacks?: string[];
   imgSrc: string;
   description: string;
   link: string;
+  github_link?: string;
 }
-
-const ProjectFragment: React.FC<ProjectFragmentProps> = ({
-  title,
-  imgSrc,
-  description,
-  link,
-}) => {
-  return (
-    <Card className="grid grid-cols-1 md:grid-cols-3">
-      <Card className="border-l-0 border-none rounded-none shadow-none">
-        <CardContent className="p-2 md:p-6 ">
-          <AspectRatio ratio={16 / 9}>
-            <img
-              className="h-full w-full object-cover"
-              src={imgSrc}
-              alt={title}
-            />
-          </AspectRatio>
-        </CardContent>
-      </Card>
-
-      <Card className="w-full md:col-span-2 border-none shadow-none">
-        <CardHeader>
-          <CardTitle className="text-2xl md:text-4xl font-extralight">
-            {title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="text-base md:text-lg">{description}</div>
-        </CardContent>
-        <CardFooter className="flex justify-end">
-          <Button
-            size="lg"
-            className="w-full md:w-auto"
-            onClick={() => window.open(link)}
-          >
-            View Project
-            <ArrowBigRightIcon className="ml-2" />
-          </Button>
-        </CardFooter>
-      </Card>
-    </Card>
-  );
-};
 
 const projects = [
   {
-    title: "Project 1",
-    imgSrc:
-      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
-    description: "This is project 1.",
-    link: "https://example.com",
+    title: "KPop Dance Team's Website",
+
+    imgSrc: KDT,
+    description:
+      "I oversaw the Digital Producer role where I was in charge of their website development, maintenance.",
+    link: "https://kdtsuo.vercel.app",
+    github_link: "https://github.com/kdtsuo/v3",
+    stacks: [
+      NodeJSLogo,
+      ViteLogo,
+      ReactLogo,
+      TypeScriptLogo,
+      TailwindCSSLogo,
+      ShadCNUILogo,
+      VercelLogo,
+      SupabaseLogo,
+    ],
   },
   {
     title: "Project 2",
@@ -81,9 +75,82 @@ const projects = [
   },
 ];
 
+const ProjectFragment: React.FC<ProjectFragmentProps> = ({
+  title,
+  imgSrc,
+  description,
+  link,
+  stacks,
+  github_link,
+}) => {
+  return (
+    <Card className="grid grid-cols-1 xl:grid-cols-3 gap-0">
+      <Card className="border-l-0 border-none rounded-none shadow-none py-2">
+        <CardContent className="p-2 md:p-6 ">
+          <AspectRatio ratio={16 / 9}>
+            <img
+              className="h-full w-full object-cover"
+              src={imgSrc}
+              alt={title}
+            />
+          </AspectRatio>
+        </CardContent>
+      </Card>
+
+      <Card className="w-full xl:col-span-2 border-none shadow-none py-2">
+        <CardHeader>
+          <CardTitle className="text-3xl md:text-4xl font-extralight text-center xl:text-left">
+            {title}
+          </CardTitle>
+          <CardDescription>
+            {stacks && (
+              <div className="flex items-center justify-center xl:justify-start flex-wrap gap-2 not-dark:invert-100 dark:invert-0">
+                {stacks.map((stack) => (
+                  <img
+                    key={stack}
+                    className="w-6 h-auto"
+                    src={stack}
+                    alt={stack}
+                  />
+                ))}
+              </div>
+            )}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="text-base md:text-lg">{description}</div>
+        </CardContent>
+        <CardFooter className="flex flex-wrap justify-end gap-4">
+          {github_link && (
+            <Button
+              variant={"secondary"}
+              size="lg"
+              className="w-full md:w-auto"
+              onClick={() => window.open(github_link)}
+            >
+              View Repository
+              <ArrowBigRightIcon />
+            </Button>
+          )}
+          {link && (
+            <Button
+              size="lg"
+              className="w-full md:w-auto"
+              onClick={() => window.open(link)}
+            >
+              View Project
+              <ArrowBigRightIcon />
+            </Button>
+          )}
+        </CardFooter>
+      </Card>
+    </Card>
+  );
+};
+
 const Projects: React.FC = () => {
   return (
-    <div className="container border-x border-y-0 mx-auto px-2 md:px-6">
+    <div className="container border-x border-y-0 mx-auto px-0 ">
       <div className="flex w-full flex-col items-center justify-start h-auto">
         <Card className="w-full border-t-0 border-x-0 border-b-0 rounded-none">
           <CardHeader className="border-t-0 border-x-0 border-b rounded-none border-dashed pb-6 md:pb-10">

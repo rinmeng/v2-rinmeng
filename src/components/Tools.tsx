@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 import ViteLogo from "@/assets/logos/vite-svgrepo-com.svg";
 import ReactLogo from "@/assets/logos/react-svgrepo-com.svg";
 import TailwindCSSLogo from "@/assets/logos/tailwindcss-icon-svgrepo-com.svg";
-import GitHubLogo from "@/assets/logos/github-svgrepo-com.svg";
+import GitHubLogo from "@/assets/logos/github-white.svg";
 import ExpressLogo from "@/assets/logos/express-svgrepo-com.svg";
-import ShadCNUILogo from "@/assets/logos/shadcn-ui-seeklogo.svg";
+import ShadCNUILogo from "@/assets/logos/shadcnui-white.svg";
 import DockerLogo from "@/assets/logos/docker-svgrepo-com.svg";
 import NodeJSLogo from "@/assets/logos/node-js-svgrepo-com.svg";
 import PythonLogo from "@/assets/logos/python-svgrepo-com.svg";
@@ -25,7 +25,7 @@ import PostgreSQLLogo from "@/assets/logos/postgresql-svgrepo-com.svg";
 import JavaScriptLogo from "@/assets/logos/javascript-svgrepo-com.svg";
 import TypeScriptLogo from "@/assets/logos/typescript-svgrepo-com.svg";
 import RStudioLogo from "@/assets/logos/rstudio-svgrepo-com.svg";
-import VercelLogo from "@/assets/logos/vercel-fill-svgrepo-com.svg";
+import VercelLogo from "@/assets/logos/vercel-fill-white.svg";
 import SupabaseLogo from "@/assets/logos/supabase-seeklogo.svg";
 import CSharpLogo from "@/assets/logos/csharp-svgrepo-com.svg";
 import UnityLogo from "@/assets/logos/unity-svgrepo-com.svg";
@@ -54,17 +54,17 @@ const Tools: React.FC = () => {
         {
           text: "shadcn/ui",
           imgSrc: ShadCNUILogo,
-          className: "dark:invert-100 not-dark:invert-0",
+          className: "dark:invert-0 not-dark:invert-100",
         },
         {
           text: "GitHub",
           imgSrc: GitHubLogo,
-          className: "dark:invert-100 not-dark:invert-0",
+          className: "dark:invert-0 not-dark:invert-100",
         },
         {
           text: "ExpressJS",
           imgSrc: ExpressLogo,
-          className: "dark:invert-100 not-dark:invert-0",
+          className: "dark:invert-0 not-dark:invert-100",
         },
         { text: "Docker", imgSrc: DockerLogo },
         { text: "NodeJS", imgSrc: NodeJSLogo },
@@ -90,22 +90,22 @@ const Tools: React.FC = () => {
         {
           text: "Unity",
           imgSrc: UnityLogo,
-          className: "dark:invert-100 not-dark:invert-0",
+          className: "dark:invert-0 not-dark:invert-100",
         },
         {
           text: "RStudio",
           imgSrc: RStudioLogo,
-          className: "dark:invert-100 not-dark:invert-0",
+          className: "dark:invert-0 not-dark:invert-100",
         },
         {
           text: "Android Studio",
           imgSrc: AndroidStudioLogo,
-          className: "dark:invert-100 not-dark:invert-0",
+          className: "dark:invert-0 not-dark:invert-100",
         },
         {
           text: "Vercel",
           imgSrc: VercelLogo,
-          className: "dark:invert-100 not-dark:invert-0",
+          className: "dark:invert-0 not-dark:invert-100",
         },
       ],
     },
@@ -191,10 +191,10 @@ const Tools: React.FC = () => {
   );
 
   // Generate an empty row
-  const renderEmptyRow = (count: number, rowIndex: number) => (
-    <div key={`empty-row-${rowIndex}`} className="flex justify-center">
+  const renderEmptyRow = (count: number, rowKey: string | number) => (
+    <div key={`empty-row-${rowKey}`} className="flex justify-center">
       {Array.from({ length: count }).map((_, index) => (
-        <EmptyBox key={`empty-box-${rowIndex}-${index}`} />
+        <EmptyBox key={`empty-box-${rowKey}-${index}`} />
       ))}
     </div>
   );
@@ -237,8 +237,8 @@ const Tools: React.FC = () => {
   return (
     <div className="flex flex-col flex-wrap h-auto">
       {/* Empty rows at top */}
-      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[0].rowIndex)}
-      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[1].rowIndex)}
+      {renderEmptyRow(rowConfigs[0].itemsCount, "bottom-1")}
+      {renderEmptyRow(rowConfigs[1].itemsCount, "bottom-2")}
 
       {/* Icon rows */}
       {iconRows.map(renderIconRow)}
