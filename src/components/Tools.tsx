@@ -32,6 +32,7 @@ import UnityLogo from "@/assets/logos/unity-svgrepo-com.svg";
 import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
 import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
 import AfterEffectsLogo from "@/assets/logos/after-effects-cc-logo-svgrepo-com.svg";
+import PremiereProLogo from "@/assets/logos/adobe-premiere-svgrepo-com.svg";
 
 interface IconItem {
   text: string;
@@ -114,6 +115,10 @@ const Tools: React.FC = () => {
         {
           text: "After Effects",
           imgSrc: AfterEffectsLogo,
+        },
+        {
+          text: "Premiere Pro",
+          imgSrc: PremiereProLogo,
         },
       ],
     },
