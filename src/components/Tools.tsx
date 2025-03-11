@@ -35,6 +35,7 @@ import AfterEffectsLogo from "@/assets/logos/after-effects-cc-logo-svgrepo-com.s
 import PremiereProLogo from "@/assets/logos/adobe-premiere-svgrepo-com.svg";
 import ExcelLogo from "@/assets/logos/excel-svgrepo-com.svg";
 import LatexLogo from "@/assets/logos/latex-svgrepo-com.svg";
+import MySQLLogo from "@/assets/logos/mysql-svgrepo-com.svg";
 
 interface IconItem {
   text: string;
@@ -131,6 +132,11 @@ const Tools: React.FC = () => {
     {
       row: 6,
       icons: [
+        {
+          text: "MySQL",
+          imgSrc: MySQLLogo,
+          className: "dark:invert-0 not-dark:invert-100",
+        },
         {
           text: "LaTeX",
           imgSrc: LatexLogo,

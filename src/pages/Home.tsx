@@ -13,7 +13,7 @@ import { ArrowBigRightIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
-import Projects from "@/pages/Projects";
+import Projects from "@/pages/ProjectsFragment";
 
 // Animation configuration - adjust these to control timing
 const CONFIG = {
