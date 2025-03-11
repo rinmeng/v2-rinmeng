@@ -147,7 +147,7 @@ const Home: React.FC = () => {
             </CardContent>
             <CardFooter
               className="absolute flex justify-center bottom-0 w-screen mx-0 text-center font-extralight 
-            bg-gradient-to-t from-background from-10% via-background/50 via-80% to-transparent to-100% py-20 not-dark:text-accent-foreground dark:text-accent"
+            bg-gradient-to-t from-background from-30% via-background/50 via-80% to-transparent to-100% py-20 not-dark:text-accent-foreground dark:text-accent"
             >
               (best viewed on desktop)
             </CardFooter>

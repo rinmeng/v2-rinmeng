@@ -213,6 +213,7 @@ const Tools: React.FC = () => {
 
       {/* Empty row at bottom */}
       {renderEmptyRow(rowConfigs[2].itemsCount, rowConfigs[2].rowIndex)}
+      {renderEmptyRow(rowConfigs[2].itemsCount, rowConfigs[2].rowIndex)}
     </div>
   );
 };
