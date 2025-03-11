@@ -111,9 +111,9 @@ const Tools: React.FC = () => {
 
   // Common row configurations
   const rowConfigs = [
-    { rowIndex: 0, itemsCount: 14 },
-    { rowIndex: 1, itemsCount: 15 },
-    { rowIndex: 5, itemsCount: 15 },
+    { rowIndex: 0, itemsCount: 15 },
+    { rowIndex: 1, itemsCount: 16 },
+    { rowIndex: 5, itemsCount: 16 },
   ];
 
   // Common class names
@@ -171,7 +171,7 @@ const Tools: React.FC = () => {
   // Generate an icon row with centered icons and empty spaces
   const renderIconRow = (rowData: { row: number; icons: IconItem[] }) => {
     const { row, icons } = rowData;
-    const totalSlots = row === 3 ? 15 : 14; // Row 3 has 15 slots, others have 14
+    const totalSlots = row === 3 ? 15 : 16; // Row 3 has 15 slots, others have 14
     const emptySlots = totalSlots - icons.length;
     const emptySlotsBefore = Math.floor(emptySlots / 2);
     const emptySlotsAfter = emptySlots - emptySlotsBefore;
@@ -212,8 +212,8 @@ const Tools: React.FC = () => {
       {iconRows.map(renderIconRow)}
 
       {/* Empty row at bottom */}
-      {renderEmptyRow(rowConfigs[2].itemsCount, rowConfigs[2].rowIndex)}
-      {renderEmptyRow(rowConfigs[2].itemsCount, rowConfigs[2].rowIndex)}
+      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[2].rowIndex)}
+      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[2].rowIndex)}
     </div>
   );
 };
