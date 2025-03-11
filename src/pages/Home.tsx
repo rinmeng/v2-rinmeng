@@ -158,7 +158,7 @@ const Home: React.FC = () => {
       <Separator />
       <Projects />
 
-      <Separator />
+      <Separator className="mb-10" />
 
       <Footer />
     </div>
