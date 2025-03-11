@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 const Projects: React.FC = () => {
   return (
     <>
-      <Card className="container mx-auto rounded-none py-26">
+      <Card className="animate-fade animate-duration-500 container mx-auto rounded-none py-26">
         <ProjectsFragment />
       </Card>
 
