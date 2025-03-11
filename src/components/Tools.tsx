@@ -30,6 +30,7 @@ import SupabaseLogo from "@/assets/logos/supabase-seeklogo.svg";
 import CSharpLogo from "@/assets/logos/csharp-svgrepo-com.svg";
 import UnityLogo from "@/assets/logos/unity-svgrepo-com.svg";
 import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
+import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
 
 interface IconItem {
   text: string;
@@ -103,6 +104,7 @@ const Tools: React.FC = () => {
           className: "dark:invert-100 not-dark:invert-0",
         },
         { text: "Supabase", imgSrc: SupabaseLogo },
+        { text: "Firebase", imgSrc: FirebaseLogo },
       ],
     },
   ];
@@ -135,14 +137,16 @@ const Tools: React.FC = () => {
   const IconWithTooltip = ({
     icon,
     index,
+    className,
   }: {
     icon: IconItem;
     index: number;
+    className?: string;
   }) => (
     <TooltipProvider key={`icon-${index}`} delayDuration={2000}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <div className={iconBoxClasses}>
+          <div className={cn(iconBoxClasses, className)}>
             <img
               src={icon.imgSrc}
               alt={icon.text}
@@ -181,7 +185,7 @@ const Tools: React.FC = () => {
           <EmptyBox key={`empty-before-${row}-${index}`} />
         ))}
 
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-cente ">
           {icons.map((icon, index) => (
             <IconWithTooltip
               key={`icon-${row}-${index}`}
@@ -199,7 +203,7 @@ const Tools: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col flex-wrap">
+    <div className="flex flex-col flex-wrap h-screen items-center justify-center">
       {/* Empty rows at top */}
       {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[0].rowIndex)}
       {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[1].rowIndex)}

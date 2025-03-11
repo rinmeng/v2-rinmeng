@@ -12,6 +12,8 @@ import {
 import { ArrowBigRightIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Tools from "@/components/Tools";
+import Footer from "@/components/Footer";
+import Projects from "@/pages/Projects";
 
 // Animation configuration - adjust these to control timing
 const CONFIG = {
@@ -125,10 +127,10 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <Separator className="my-10" />
+      <Separator className="mt-10" />
 
-      <div className=" h-screen w-screen">
-        <Card className="relative gap-0 border-none shadow-none">
+      <div className="h-auto w-screen">
+        <Card className="relative gap-0 border-none shadow-none py-0">
           <CardHeader className="gap-0 px-0 w-full">
             <CardTitle
               className="absolute w-screen mx-0 text-4xl md:text-6xl px-0 text-center font-extralight
@@ -138,7 +140,7 @@ const Home: React.FC = () => {
               <br />
               with modern tools
             </CardTitle>
-            <CardContent className="text-center gap-0 px-0">
+            <CardContent className="text-center gap-0">
               <div className="flex justify-center">
                 <Tools />
               </div>
@@ -152,6 +154,13 @@ const Home: React.FC = () => {
           </CardHeader>
         </Card>
       </div>
+
+      <Separator />
+      <Projects />
+
+      <Separator />
+
+      <Footer />
     </div>
   );
 };
