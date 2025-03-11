@@ -5,7 +5,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
+// Import all logos
 import ViteLogo from "@/assets/logos/vite-svgrepo-com.svg";
 import ReactLogo from "@/assets/logos/react-svgrepo-com.svg";
 import TailwindCSSLogo from "@/assets/logos/tailwindcss-icon-svgrepo-com.svg";
@@ -26,8 +28,6 @@ import RStudioLogo from "@/assets/logos/rstudio-svgrepo-com.svg";
 import VercelLogo from "@/assets/logos/vercel-fill-svgrepo-com.svg";
 import SupabaseLogo from "@/assets/logos/supabase-seeklogo.svg";
 
-import { cn } from "@/lib/utils";
-
 interface IconItem {
   text: string;
   imgSrc: string;
@@ -35,307 +35,161 @@ interface IconItem {
 }
 
 const Tools: React.FC = () => {
-  const icons: IconItem[] = [
+  // Combined icon arrays into a single data structure with row information
+  const iconRows: { row: number; icons: IconItem[] }[] = [
     {
-      text: "Vite",
-      imgSrc: ViteLogo,
+      row: 2,
+      icons: [
+        { text: "Vite", imgSrc: ViteLogo },
+        { text: "React", imgSrc: ReactLogo },
+        { text: "TailwindCSS", imgSrc: TailwindCSSLogo },
+        {
+          text: "shadcn/ui",
+          imgSrc: ShadCNUILogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
+        {
+          text: "GitHub",
+          imgSrc: GitHubLogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
+        {
+          text: "ExpressJS",
+          imgSrc: ExpressLogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
+        { text: "Docker", imgSrc: DockerLogo },
+        { text: "NodeJS", imgSrc: NodeJSLogo },
+      ],
     },
     {
-      text: "React",
-      imgSrc: ReactLogo,
+      row: 3,
+      icons: [
+        { text: "HTML5", imgSrc: HTML5Logo },
+        { text: "CSS3", imgSrc: CSS3Logo },
+        { text: "JavaScript", imgSrc: JavaScriptLogo },
+        { text: "Python", imgSrc: PythonLogo },
+        { text: "Java", imgSrc: JavaLogo },
+        { text: "Git", imgSrc: GitLogo },
+        { text: "PostgreSQL", imgSrc: PostgreSQLLogo },
+      ],
     },
     {
-      text: "TailwindCSS",
-      imgSrc: TailwindCSSLogo,
-    },
-    {
-      text: "shadcn/ui",
-      imgSrc: ShadCNUILogo,
-      className: "dark:invert-100 not-dark:invert-0",
-    },
-    {
-      text: "GitHub",
-      imgSrc: GitHubLogo,
-      className: "dark:invert-100 not-dark:invert-0",
-    },
-    {
-      text: "ExpressJS",
-      imgSrc: ExpressLogo,
-      className: "dark:invert-100 not-dark:invert-0",
-    },
-    {
-      text: "Docker",
-      imgSrc: DockerLogo,
-    },
-    {
-      text: "NodeJS",
-      imgSrc: NodeJSLogo,
-    },
-  ];
-
-  const icons2: IconItem[] = [
-    {
-      text: "HTML5",
-      imgSrc: HTML5Logo,
-    },
-    {
-      text: "CSS3",
-      imgSrc: CSS3Logo,
-    },
-    {
-      text: "JavaScript",
-      imgSrc: JavaScriptLogo,
-    },
-    {
-      text: "Python",
-      imgSrc: PythonLogo,
-    },
-    {
-      text: "Java",
-      imgSrc: JavaLogo,
-    },
-    {
-      text: "Git",
-      imgSrc: GitLogo,
-    },
-    {
-      text: "PostgreSQL",
-      imgSrc: PostgreSQLLogo,
+      row: 4,
+      icons: [
+        { text: "TypeScript", imgSrc: TypeScriptLogo },
+        {
+          text: "RStudio",
+          imgSrc: RStudioLogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
+        {
+          text: "Vercel",
+          imgSrc: VercelLogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
+        { text: "Supabase", imgSrc: SupabaseLogo },
+      ],
     },
   ];
 
-  const icons3: IconItem[] = [
-    {
-      text: "TypeScript",
-      imgSrc: TypeScriptLogo,
-    },
-    {
-      text: "RStudio",
-      imgSrc: RStudioLogo,
-      className: "dark:invert-100 not-dark:invert-0",
-    },
-    {
-      text: "Vercel",
-      imgSrc: VercelLogo,
-      className: "dark:invert-100 not-dark:invert-0",
-    },
-    {
-      text: "Supabase",
-      imgSrc: SupabaseLogo,
-    },
+  // Common row configurations
+  const rowConfigs = [
+    { rowIndex: 0, itemsCount: 14 },
+    { rowIndex: 1, itemsCount: 15 },
+    { rowIndex: 5, itemsCount: 15 },
   ];
 
-  // Calculate how many blank divs to add to reach a total of 14 items
-  const emptyIconsNeeded = Math.max(0, 14 - icons.length);
-  const emptyIconsNeeded2 = Math.max(0, 15 - icons2.length);
-  const emptyIconsNeeded3 = Math.max(0, 14 - icons3.length);
-  // Calculate how many blank divs to add before and after the actual icons
-  const emptyIconsBefore = Math.floor(emptyIconsNeeded / 2);
-  const emptyIconsBefore2 = Math.floor(emptyIconsNeeded2 / 2);
-  const emptyIconsBefore3 = Math.floor(emptyIconsNeeded3 / 2);
+  // Common class names
+  const emptyBoxClasses =
+    "m-4 border dark:border-muted not-dark:border-muted-foreground p-4 rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 transition-all duration-300 ease-in-out";
+  const iconBoxClasses = cn(
+    emptyBoxClasses,
+    "dark:hover:drop-shadow-[0_0_50px_rgba(255,255,255,1)]",
+    "not-dark:hover:drop-shadow-[0_0_50px_rgba(0,0,0,1)]",
+    "shadow-none"
+  );
 
-  const emptyIconsAfter = emptyIconsNeeded - emptyIconsBefore;
-  const emptyIconsAfter2 = emptyIconsNeeded2 - emptyIconsBefore2;
-  const emptyIconsAfter3 = emptyIconsNeeded3 - emptyIconsBefore3;
+  // Reusable empty box component
+  const EmptyBox = () => (
+    <div className={emptyBoxClasses}>
+      <div className="w-16 h-16"></div>
+    </div>
+  );
+
+  // Reusable icon with tooltip component
+  const IconWithTooltip = ({
+    icon,
+    index,
+  }: {
+    icon: IconItem;
+    index: number;
+  }) => (
+    <TooltipProvider key={`icon-${index}`} delayDuration={2000}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className={iconBoxClasses}>
+            <img
+              src={icon.imgSrc}
+              alt={icon.text}
+              className={cn("w-16", "h-16", icon.className)}
+            />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent side="top">{icon.text}</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+
+  // Generate an empty row
+  const renderEmptyRow = (count: number, rowIndex: number) => (
+    <div key={`empty-row-${rowIndex}`} className="flex justify-center">
+      {Array.from({ length: count }).map((_, index) => (
+        <EmptyBox key={`empty-box-${rowIndex}-${index}`} />
+      ))}
+    </div>
+  );
+
+  // Generate an icon row with centered icons and empty spaces
+  const renderIconRow = (rowData: { row: number; icons: IconItem[] }) => {
+    const { row, icons } = rowData;
+    const totalSlots = row === 3 ? 15 : 14; // Row 3 has 15 slots, others have 14
+    const emptySlots = totalSlots - icons.length;
+    const emptySlotsBefore = Math.floor(emptySlots / 2);
+    const emptySlotsAfter = emptySlots - emptySlotsBefore;
+
+    return (
+      <div key={`icon-row-${row}`} className="flex flex-wrap justify-center">
+        {Array.from({ length: emptySlotsBefore }).map((_, index) => (
+          <EmptyBox key={`empty-before-${row}-${index}`} />
+        ))}
+
+        {icons.map((icon, index) => (
+          <IconWithTooltip
+            key={`icon-${row}-${index}`}
+            icon={icon}
+            index={index}
+          />
+        ))}
+
+        {Array.from({ length: emptySlotsAfter }).map((_, index) => (
+          <EmptyBox key={`empty-after-${row}-${index}`} />
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className="flex flex-col flex-wrap">
-      <div className="flex justify-center">
-        {Array.from({ length: 14 }).map((_, index) => (
-          <div
-            key={index}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-            rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-            transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-      </div>
-      <div className="flex justify-center">
-        {Array.from({ length: 15 }).map((_, index) => (
-          <div
-            key={index}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-            rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-            transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-      </div>
+      {/* Empty rows at top */}
+      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[0].rowIndex)}
+      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[1].rowIndex)}
 
-      <div className="flex flex-wrap justify-center">
-        {/* Empty placeholders before the actual icons */}
-        {Array.from({ length: emptyIconsBefore }).map((_, index) => (
-          <div
-            key={`empty-before-${index}`}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-                     rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-                     transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
+      {/* Icon rows */}
+      {iconRows.map(renderIconRow)}
 
-        {/* Actual icons with tooltips */}
-        {icons.map((icon: IconItem, index: number) => (
-          <TooltipProvider key={`icon-${index}`} delayDuration={2000}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div
-                  className={cn(
-                    "m-4 border dark:border-muted not-dark:border-muted-foreground p-4",
-                    "rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10",
-                    "transition-all duration-300 ease-in-out",
-                    "dark:hover:drop-shadow-[0_0_50px_rgba(255,255,255,1)]",
-                    "not-dark:hover:drop-shadow-[0_0_50px_rgba(0,0,0,1)]",
-                    "shadow-none"
-                  )}
-                >
-                  <img
-                    src={icon.imgSrc}
-                    alt={icon.text}
-                    className={cn("w-16", "h-16", icon.className)}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent side="top">{icon.text}</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        ))}
-
-        {/* Empty placeholders after the actual icons */}
-        {Array.from({ length: emptyIconsAfter }).map((_, index) => (
-          <div
-            key={`empty-after-${index}`}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-                     rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-                     transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap justify-center">
-        {/* Empty placeholders before the actual icons */}
-        {Array.from({ length: emptyIconsBefore2 }).map((_, index) => (
-          <div
-            key={`empty-before-${index}`}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-                     rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-                     transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-
-        {/* Actual icons with tooltips */}
-        {icons2.map((icon: IconItem, index: number) => (
-          <TooltipProvider key={`icon-${index}`} delayDuration={2000}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div
-                  className={cn(
-                    "m-4 border dark:border-muted not-dark:border-muted-foreground p-4",
-                    "rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10",
-                    "transition-all duration-300 ease-in-out",
-                    "dark:hover:drop-shadow-[0_0_50px_rgba(255,255,255,1)]",
-                    "not-dark:hover:drop-shadow-[0_0_50px_rgba(0,0,0,1)]",
-                    "shadow-none"
-                  )}
-                >
-                  <img
-                    src={icon.imgSrc}
-                    alt={icon.text}
-                    className={cn("w-16", "h-16", icon.className)}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent side="top">{icon.text}</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        ))}
-
-        {/* Empty placeholders after the actual icons */}
-        {Array.from({ length: emptyIconsAfter2 }).map((_, index) => (
-          <div
-            key={`empty-after-${index}`}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-                     rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-                     transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap justify-center">
-        {/* Empty placeholders before the actual icons */}
-        {Array.from({ length: emptyIconsBefore3 }).map((_, index) => (
-          <div
-            key={`empty-before-${index}`}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-                     rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-                     transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-
-        {/* Actual icons with tooltips */}
-        {icons3.map((icon: IconItem, index: number) => (
-          <TooltipProvider key={`icon-${index}`} delayDuration={2000}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div
-                  className={cn(
-                    "m-4 border dark:border-muted not-dark:border-muted-foreground p-4",
-                    "rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10",
-                    "transition-all duration-300 ease-in-out",
-                    "dark:hover:drop-shadow-[0_0_50px_rgba(255,255,255,1)]",
-                    "not-dark:hover:drop-shadow-[0_0_50px_rgba(0,0,0,1)]",
-                    "shadow-none"
-                  )}
-                >
-                  <img
-                    src={icon.imgSrc}
-                    alt={icon.text}
-                    className={cn("w-16", "h-16", icon.className)}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent side="top">{icon.text}</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        ))}
-
-        {/* Empty placeholders after the actual icons */}
-        {Array.from({ length: emptyIconsAfter3 }).map((_, index) => (
-          <div
-            key={`empty-after-${index}`}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-                     rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-                     transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex justify-center">
-        {Array.from({ length: 15 }).map((_, index) => (
-          <div
-            key={index}
-            className="m-4 border dark:border-muted not-dark:border-muted-foreground p-4 
-            rounded-xl bg-accent-foreground/5 hover:bg-accent-foreground/10 
-            transition-all duration-300 ease-in-out"
-          >
-            <div className="w-16 h-16"></div>
-          </div>
-        ))}
-      </div>
+      {/* Empty row at bottom */}
+      {renderEmptyRow(rowConfigs[2].itemsCount, rowConfigs[2].rowIndex)}
     </div>
   );
 };
