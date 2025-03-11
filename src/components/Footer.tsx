@@ -13,7 +13,7 @@ export default function Footer() {
     return date.getFullYear();
   };
   return (
-    <Card className="text-center rounded-none border-none ">
+    <Card className="text-center rounded-none border-y-0 border-x shadow-none container mx-auto ">
       <CardHeader>
         <CardTitle>&copy; {getYear()} rin meng</CardTitle>
         <CardDescription className="text-lg"></CardDescription>
