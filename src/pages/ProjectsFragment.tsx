@@ -215,7 +215,7 @@ const ProjectFragment: React.FC<ProjectFragmentProps> = ({
 
 const ProjectsFragment: React.FC = () => {
   return (
-    <div className="container border-x border-y-0 mx-auto px-0 ">
+    <div className="container mx-auto px-0 ">
       <div className="flex w-full flex-col items-center justify-start h-auto">
         <Card className="w-full border-t-0 border-x-0 border-b-0 rounded-none">
           <CardHeader className="border-t-0 border-x-0 border-b rounded-none border-dashed pb-6 md:pb-10">

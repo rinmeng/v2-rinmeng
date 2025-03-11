@@ -13,7 +13,7 @@ import { ArrowBigRightIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
-import Projects from "@/pages/ProjectsFragment";
+import ProjectsFragment from "@/pages/ProjectsFragment";
 
 // Animation configuration - adjust these to control timing
 const CONFIG = {
@@ -156,8 +156,9 @@ const Home: React.FC = () => {
       </div>
 
       <Separator />
-      <Projects />
-
+      <Card className="container mx-auto rounded-none border-y-0">
+        <ProjectsFragment />
+      </Card>
       <Separator className="mb-10" />
 
       <Footer />
