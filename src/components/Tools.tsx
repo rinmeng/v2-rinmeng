@@ -27,6 +27,9 @@ import TypeScriptLogo from "@/assets/logos/typescript-svgrepo-com.svg";
 import RStudioLogo from "@/assets/logos/rstudio-svgrepo-com.svg";
 import VercelLogo from "@/assets/logos/vercel-fill-svgrepo-com.svg";
 import SupabaseLogo from "@/assets/logos/supabase-seeklogo.svg";
+import CSharpLogo from "@/assets/logos/csharp-svgrepo-com.svg";
+import UnityLogo from "@/assets/logos/unity-svgrepo-com.svg";
+import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
 
 interface IconItem {
   text: string;
@@ -78,9 +81,20 @@ const Tools: React.FC = () => {
       row: 4,
       icons: [
         { text: "TypeScript", imgSrc: TypeScriptLogo },
+        { text: "C#", imgSrc: CSharpLogo },
+        {
+          text: "Unity",
+          imgSrc: UnityLogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
         {
           text: "RStudio",
           imgSrc: RStudioLogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
+        {
+          text: "Android Studio",
+          imgSrc: AndroidStudioLogo,
           className: "dark:invert-100 not-dark:invert-0",
         },
         {
@@ -159,18 +173,23 @@ const Tools: React.FC = () => {
     const emptySlotsAfter = emptySlots - emptySlotsBefore;
 
     return (
-      <div key={`icon-row-${row}`} className="flex flex-wrap justify-center">
+      <div
+        key={`icon-row-${row}`}
+        className="flex flex-wrap justify-center items-center"
+      >
         {Array.from({ length: emptySlotsBefore }).map((_, index) => (
           <EmptyBox key={`empty-before-${row}-${index}`} />
         ))}
 
-        {icons.map((icon, index) => (
-          <IconWithTooltip
-            key={`icon-${row}-${index}`}
-            icon={icon}
-            index={index}
-          />
-        ))}
+        <div className="flex justify-center items-center">
+          {icons.map((icon, index) => (
+            <IconWithTooltip
+              key={`icon-${row}-${index}`}
+              icon={icon}
+              index={index}
+            />
+          ))}
+        </div>
 
         {Array.from({ length: emptySlotsAfter }).map((_, index) => (
           <EmptyBox key={`empty-after-${row}-${index}`} />

@@ -239,4 +239,26 @@
       opacity: 0;
     }
   }
+
+  --animate-slide-left-to-right: slide-left-to-right 20s linear infinite;
+
+  @keyframes slide-left-to-right {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  --animate-slide-right-to-left: slide-right-to-left 20s linear infinite;
+
+  @keyframes slide-right-to-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
