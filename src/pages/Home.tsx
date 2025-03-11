@@ -57,7 +57,7 @@ const AnimatedText: React.FC = () => {
   );
 
   return (
-    <div className="font-extralight min-w-full px-0 md:px-6 h-20 flex items-center overflow-hidden">
+    <div className="font-extralight min-w-full px-0 md:px-6 h-24 flex items-center overflow-hidden">
       <div className="relative w-full text-center" key={key}>
         {words.map((word, wordIndex) => (
           <span
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
 
         <div
           className="relative flex justify-center lg:justify-start items-center 
-        h-full w-full container px-4"
+        h-full w-full container mx-auto"
         >
           <Card
             className="flex flex-col justify-center backdrop-blur-md gap-4 md:gap-6
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
                   <div className="text-xl md:text-3xl font-bold">
                     hi! i'm <span>rin</span> and i like{" "}
                   </div>
-                  <div className="text-xl sm:text-3xl md:text-4xl xl:text-6xl font-bold text-center w-full">
+                  <div className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-bold text-center w-full">
                     <AnimatedText />
                   </div>
                 </div>
