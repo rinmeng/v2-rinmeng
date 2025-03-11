@@ -33,6 +33,8 @@ import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
 import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
 import AfterEffectsLogo from "@/assets/logos/after-effects-cc-logo-svgrepo-com.svg";
 import PremiereProLogo from "@/assets/logos/adobe-premiere-svgrepo-com.svg";
+import ExcelLogo from "@/assets/logos/excel-svgrepo-com.svg";
+import LatexLogo from "@/assets/logos/latex-svgrepo-com.svg";
 
 interface IconItem {
   text: string;
@@ -120,6 +122,20 @@ const Tools: React.FC = () => {
           text: "Premiere Pro",
           imgSrc: PremiereProLogo,
         },
+        {
+          text: "Excel",
+          imgSrc: ExcelLogo,
+        },
+      ],
+    },
+    {
+      row: 6,
+      icons: [
+        {
+          text: "LaTeX",
+          imgSrc: LatexLogo,
+          className: "dark:invert-100 not-dark:invert-0",
+        },
       ],
     },
   ];
@@ -187,7 +203,7 @@ const Tools: React.FC = () => {
   const renderIconRow = (rowData: { row: number; icons: IconItem[] }) => {
     const { row, icons } = rowData;
 
-    const totalSlots = row === 2 || row === 4 ? 16 : 15;
+    const totalSlots = row % 2 == 0 ? 16 : 15;
     const emptySlots = totalSlots - icons.length;
     const emptySlotsBefore = Math.floor(emptySlots / 2);
     const emptySlotsAfter = emptySlots - emptySlotsBefore;
@@ -227,8 +243,8 @@ const Tools: React.FC = () => {
       {/* Icon rows */}
       {iconRows.map(renderIconRow)}
 
-      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[0].rowIndex)}
-      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[1].rowIndex)}
+      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[0].rowIndex)}
+      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[1].rowIndex)}
     </div>
   );
 };
