@@ -128,7 +128,7 @@ const Home: React.FC = () => {
       <Separator className="my-10" />
 
       <div className=" h-screen w-screen">
-        <Card className="relative gap-0 border-none">
+        <Card className="relative gap-0 border-none shadow-none">
           <CardHeader className="gap-0 px-0 w-full">
             <CardTitle
               className="absolute w-screen mx-0 text-4xl md:text-6xl px-0 text-center font-extralight
@@ -136,13 +136,14 @@ const Home: React.FC = () => {
             >
               Powering creativity
               <br />
-              with my favorite tools
+              with modern tools
             </CardTitle>
             <CardContent className="text-center gap-0 px-0">
               <div className="flex justify-center">
-                <Tools />
+                <Tools />¥
               </div>
             </CardContent>
+            <CardFooter className="absolute flex justify-center bottom-0 w-screen mx-0 text-center font-extralight bg-gradient-to-t from-background from-10% via-background/50 via-80% to-transparent to-100% py-20"></CardFooter>
           </CardHeader>
         </Card>
       </div>
