@@ -181,7 +181,7 @@ const Tools: React.FC = () => {
   // Generate an icon row with centered icons and empty spaces
   const renderIconRow = (rowData: { row: number; icons: IconItem[] }) => {
     const { row, icons } = rowData;
-    const totalSlots = row === 3 ? 15 : 16; // Row 3 has 15 slots, others have 14
+    const totalSlots = row % 2 !== 0 ? 15 : 16;
     const emptySlots = totalSlots - icons.length;
     const emptySlotsBefore = Math.floor(emptySlots / 2);
     const emptySlotsAfter = emptySlots - emptySlotsBefore;
@@ -215,15 +215,11 @@ const Tools: React.FC = () => {
   return (
     <div className="flex flex-col flex-wrap h-auto">
       {/* Empty rows at top */}
-      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[0].rowIndex)}
-      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[1].rowIndex)}
+      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[0].rowIndex)}
+      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[1].rowIndex)}
 
       {/* Icon rows */}
       {iconRows.map(renderIconRow)}
-
-      {/* Empty row at bottom */}
-      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[2].rowIndex)}
-      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[2].rowIndex)}
     </div>
   );
 };
