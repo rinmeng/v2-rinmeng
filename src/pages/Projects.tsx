@@ -34,6 +34,7 @@ import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
 
 // import images
 import KDT from "@/assets/projects/KDT.png";
+import RM from "@/assets/projects/RM.png";
 
 interface ProjectFragmentProps {
   title: string;
@@ -65,13 +66,20 @@ const projects = [
     ],
   },
   {
-    title: "Project 2",
-    imgSrc:
-      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
-    description: `lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-    ullamco laboris nisi ut aliquip ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    link: "https://example.com",
+    title: "Personal Website V3",
+    imgSrc: RM,
+    stacks: [
+      NodeJSLogo,
+      ViteLogo,
+      ReactLogo,
+      TypeScriptLogo,
+      ShadCNUILogo,
+      TailwindCSSLogo,
+      VercelLogo,
+    ],
+    description: "My personal website where I showcase my projects and blog.",
+    link: "https://rinmeng.vercel.app",
+    github_link: "https://github.com/rinmeng/v3-rinmeng",
   },
 ];
 
