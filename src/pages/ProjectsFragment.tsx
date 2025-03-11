@@ -148,7 +148,7 @@ const ProjectFragment: React.FC<ProjectFragmentProps> = ({
   github_link,
 }) => {
   return (
-    <Card className="grid grid-cols-1 xl:grid-cols-3 gap-0">
+    <Card className="grid grid-cols-1 xl:grid-cols-3 gap-0 ">
       <Card className="border-l-0 border-none rounded-none shadow-none py-2">
         <CardContent className="p-2 md:p-6 ">
           <AspectRatio ratio={16 / 9}>
@@ -217,8 +217,8 @@ const ProjectsFragment: React.FC = () => {
   return (
     <div className="container mx-auto px-0 ">
       <div className="flex w-full flex-col items-center justify-start h-auto">
-        <Card className="w-full border-t-0 border-x-0 border-b-0 rounded-none shadow-none">
-          <CardHeader className="border-t-0 border-x-0 border-b rounded-none border-dashed pb-6 md:pb-10">
+        <Card className=" w-full border-t-0 border-x-0 border-b-0 rounded-none shadow-none">
+          <CardHeader>
             <CardTitle className="text-4xl md:text-6xl font-extralight">
               Projects
             </CardTitle>
@@ -226,9 +226,15 @@ const ProjectsFragment: React.FC = () => {
               Here are some of the projects I've worked on.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6 md:space-y-4">
+          <div
+            className="container border-t-0 border-x-0
+           border-b rounded-none w-full border-dashed"
+          ></div>
+          <CardContent className="space-y-6 md:space-y-4 ">
             {projects.map((project) => (
-              <ProjectFragment key={project.title} {...project} />
+              <>
+                <ProjectFragment key={project.title} {...project} />
+              </>
             ))}
           </CardContent>
           <CardFooter className="border-t-0 border-x-0 border-b rounded-none border-dashed mb-6 md:mb-10"></CardFooter>

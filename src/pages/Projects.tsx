@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
     <>
       <Card className="container py-16 mx-auto rounded-none shadow-none border-y-0 border-x"></Card>
       <Card className="relative animate-fade animate-duration-500 py-0 border-none shadow-none gap-0">
-        <CardHeader className="absolute border-b w-full border-dashed"></CardHeader>
+        <CardHeader className="border-b w-full border-dashed"></CardHeader>
         <CardContent className="container mx-auto px-0 border-y-0 border-x rounded-none">
           <ProjectsFragment />
         </CardContent>
