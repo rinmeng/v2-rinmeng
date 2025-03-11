@@ -181,7 +181,8 @@ const Tools: React.FC = () => {
   // Generate an icon row with centered icons and empty spaces
   const renderIconRow = (rowData: { row: number; icons: IconItem[] }) => {
     const { row, icons } = rowData;
-    const totalSlots = row % 2 !== 0 ? 15 : 16;
+
+    const totalSlots = row === 2 || row === 4 ? 16 : 15;
     const emptySlots = totalSlots - icons.length;
     const emptySlotsBefore = Math.floor(emptySlots / 2);
     const emptySlotsAfter = emptySlots - emptySlotsBefore;
@@ -220,6 +221,9 @@ const Tools: React.FC = () => {
 
       {/* Icon rows */}
       {iconRows.map(renderIconRow)}
+
+      {renderEmptyRow(rowConfigs[1].itemsCount, rowConfigs[0].rowIndex)}
+      {renderEmptyRow(rowConfigs[0].itemsCount, rowConfigs[1].rowIndex)}
     </div>
   );
 };
