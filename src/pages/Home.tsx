@@ -127,7 +127,8 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <Separator className="mt-10" />
+      <div className="container mx-auto border-x w-full border-dashed py-10"></div>
+      <Separator />
 
       <div className="h-auto w-screen">
         <Card className="relative gap-0 border-none shadow-none py-0">
@@ -156,10 +157,14 @@ const Home: React.FC = () => {
       </div>
 
       <Separator />
-      <Card className="container mx-auto rounded-none border-y-0">
+
+      <div className="container mx-auto border-x w-full border-dashed py-10"></div>
+      <div className="border-b w-full border-dashed"></div>
+      <Card className="container mx-auto rounded-none border-y-0 shadow-none">
         <ProjectsFragment />
       </Card>
-      <Separator className="mb-10" />
+
+      <Separator />
 
       <Footer />
     </div>
