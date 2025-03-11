@@ -47,7 +47,7 @@ const ProjectFragment: React.FC<ProjectFragmentProps> = ({
         <CardContent>
           <div className="text-base md:text-lg">{description}</div>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="flex justify-end">
           <Button
             size="lg"
             className="w-full md:w-auto"
