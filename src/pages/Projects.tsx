@@ -1,11 +1,6 @@
 import React from "react";
 import ProjectsFragment from "@/pages/ProjectsFragment";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 
 const Projects: React.FC = () => {

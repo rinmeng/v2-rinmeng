@@ -27,9 +27,9 @@ import JavaScriptLogo from "@/assets/logos/javascript-svgrepo-com.svg";
 import TypeScriptLogo from "@/assets/logos/typescript-svgrepo-com.svg";
 import VercelLogo from "@/assets/logos/vercel-fill-white.svg";
 import SupabaseLogo from "@/assets/logos/supabase-seeklogo.svg";
-// import JavaLogo from "@/assets/logos/java-svgrepo-com.svg";
-// import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
-// import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
+import JavaLogo from "@/assets/logos/java-svgrepo-com.svg";
+import AndroidStudioLogo from "@/assets/logos/androidstudio-svgrepo-com.svg";
+import FirebaseLogo from "@/assets/logos/firebase-svgrepo-com.svg";
 // import PythonLogo from "@/assets/logos/python-svgrepo-com.svg";
 import GitHubLogo from "@/assets/logos/github-white.svg";
 import MySQLLogo from "@/assets/logos/mysql-svgrepo-com.svg";
@@ -39,6 +39,7 @@ import KDT from "@/assets/projects/KDT.png";
 import RM from "@/assets/projects/RM.png";
 import PC8TH from "@/assets/projects/PC8TH.png";
 import CTMS from "@/assets/projects/CTMS.png";
+import HIKELOWNA from "@/assets/projects/HIKELOWNA.png";
 
 interface ProjectFragmentProps {
   title: string;
@@ -136,6 +137,15 @@ const projects = [
     It is my first exposure to backend development and I learned an immense amount of how backend system works. 
     This project was honorably mentioned by the professor of the course.`,
     github_link: "https://github.com/rinmeng/pc8th",
+  },
+  {
+    title: "hikelowna",
+    imgSrc: HIKELOWNA,
+    stacks: [JavaLogo, AndroidStudioLogo, FirebaseLogo],
+    description: `hikelowna is a hiking trail management system that I developed for a course project with my group members. 
+    This was my first exposure to Android development and I learned a lot about how Android apps are developed 
+    and how they interact with the backend.`,
+    github_link: "https://github.com/rinmeng/hikelowna",
   },
 ];
 
