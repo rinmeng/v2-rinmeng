@@ -136,7 +136,7 @@ export default function Contacts() {
               <div className="w-full lg:w-1/3 flex flex-col justify-center items-center p-12 ">
                 <div className="w-full flex-grow justify-center flex flex-col py-8 space-y-2">
                   <h2 className="text-3xl font-bold text-center pb-2">
-                    Connect With Us
+                    Connect With Me
                   </h2>
                   {socialLinks.map((link, index) => (
                     <a
@@ -174,7 +174,7 @@ export default function Contacts() {
                     className="space-y-6"
                   >
                     <h2 className="text-3xl font-bold text-center mb-6">
-                      Directly Contact Us
+                      Directly Contact Me
                     </h2>
                     <FormField
                       control={form.control}
