@@ -246,8 +246,6 @@ export default function Contacts() {
         </div>
       </Card>
 
-      <div className="border-b w-full border-dashed"></div>
-
       <Footer />
     </div>
   );

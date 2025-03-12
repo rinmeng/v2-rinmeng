@@ -12,7 +12,6 @@ const Projects: React.FC = () => {
         <CardContent className="container mx-auto px-0 border-y-0 border-x rounded-none">
           <ProjectsFragment />
         </CardContent>
-        <div className="border-t w-full border-dashed"></div>
       </Card>
 
       <Footer />

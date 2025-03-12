@@ -247,7 +247,6 @@ const ProjectsFragment: React.FC = () => {
               </>
             ))}
           </CardContent>
-          <CardFooter className="border-t-0 border-x-0 border-b rounded-none border-dashed mb-6 md:mb-10"></CardFooter>
         </Card>
       </div>
     </div>

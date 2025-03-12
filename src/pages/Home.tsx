@@ -164,8 +164,6 @@ const Home: React.FC = () => {
         <ProjectsFragment />
       </Card>
 
-      <Separator />
-
       <Footer />
     </div>
   );
