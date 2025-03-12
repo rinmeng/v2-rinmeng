@@ -23,7 +23,6 @@ import emailjs from "@emailjs/browser";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { useTheme } from "@/contexts/ThemeContext";
 
 // Define schema for form validation
 const formSchema = z.object({
@@ -51,7 +50,6 @@ interface SocialLink {
 
 export default function Contacts() {
   const [isCurrentlySubmitting, setIsCurrentlySubmitting] = useState(false);
-  const { theme } = useTheme();
   // Define form with React Hook Form and zod validation
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -127,12 +125,7 @@ export default function Contacts() {
 
   return (
     <>
-      <div
-        className="animate-fade-in"
-        style={{
-          background: `var(--bg-dotted-${theme === "dark" ? "dark" : "light"})`,
-        }}
-      >
+      <div className="animate-fade-in">
         <div></div>
         <div
           className="h-auto lg:h-screen w-full flex items-center justify-center pt-36  
