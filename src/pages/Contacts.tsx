@@ -124,17 +124,16 @@ export default function Contacts() {
   ];
 
   return (
-    <>
-      <div className="animate-fade-in">
-        <div></div>
-        <div
-          className="h-auto lg:h-screen w-full flex items-center justify-center pt-36  
-        "
-        >
-          <Card className="m-5 w-full max-w-6xl overflow-hidden">
+    <div className="animate-fade animate-duration-500">
+      <div className="container py-16 mx-auto rounded-none shadow-none border-y-0 border-x"></div>
+      <div className="border-b w-full border-dashed"></div>
+
+      <Card className="container mx-auto gap-0 py-0 rounded-none border-y-0 ">
+        <div className="h-auto  w-full flex items-center justify-center">
+          <Card className="container m-5 w-full max-w-6xl overflow-hidden gap-0 ">
             <CardContent className="p-0 flex flex-col lg:flex-row relative">
               {/* Social Media Cards Section */}
-              <div className="w-full lg:w-1/3 flex flex-col justify-center items-center p-12 py-6 lg:py-12">
+              <div className="w-full lg:w-1/3 flex flex-col justify-center items-center p-12 ">
                 <div className="w-full flex-grow justify-center flex flex-col py-8 space-y-2">
                   <h2 className="text-3xl font-bold text-center pb-2">
                     Connect With Us
@@ -245,9 +244,11 @@ export default function Contacts() {
 
           <Toaster />
         </div>
-      </div>
+      </Card>
+
+      <div className="border-b w-full border-dashed"></div>
 
       <Footer />
-    </>
+    </div>
   );
 }
