@@ -104,7 +104,7 @@ export default function Contacts() {
     {
       icon: linkedinlogo,
       href: "https://www.linkedin.com/in/rin-m-b28910234/",
-      title: "Discord",
+      title: "LinkedIn",
     },
     {
       icon: instagramlogo,
