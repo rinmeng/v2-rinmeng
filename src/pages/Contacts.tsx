@@ -110,17 +110,17 @@ export default function Contacts() {
     },
     {
       icon: instagramlogo,
-      href: "https://www.instagram.com/kdt.suo/?theme=dark",
+      href: "https://www.instagram.com/rin.m04/?theme=dark",
       title: "Instagram",
     },
     {
       icon: maillogo,
-      href: "mailto:kpopdanceteam.suo@gmail.com",
+      href: "mailto:phurinmeng@gmail.com",
       title: "Email",
     },
     {
       icon: githublogo,
-      href: "https://github.com/kdtsuo/v3",
+      href: "https://github.com/rinmeng",
       title: "GitHub",
     },
   ];
