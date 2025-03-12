@@ -97,7 +97,7 @@ const Home: React.FC = () => {
           <Card
             className="flex flex-col justify-center backdrop-blur-md gap-4 md:gap-6
           bg-white/30 dark:bg-black/30 border border-white/20
-           dark:border-white/10 shadow-lg "
+           dark:border-white/10 shadow-lg mx-4"
           >
             <CardContent>
               <CardHeader>
