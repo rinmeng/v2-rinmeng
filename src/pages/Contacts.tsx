@@ -113,7 +113,7 @@ export default function Contacts() {
     },
     {
       icon: maillogo,
-      href: "mailto:phurinmeng@gmail.com",
+      href: "mailto:mail@rinm.dev",
       title: "Email",
     },
     {
