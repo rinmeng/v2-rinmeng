@@ -243,8 +243,8 @@ const Tools: React.FC = () => {
   return (
     <div className="flex flex-col flex-wrap h-auto">
       {/* Empty rows at top */}
-      {renderEmptyRow(rowConfigs[0].itemsCount, "bottom-1")}
-      {renderEmptyRow(rowConfigs[1].itemsCount, "bottom-2")}
+      {renderEmptyRow(rowConfigs[1].itemsCount, "bottom-1")}
+      {renderEmptyRow(rowConfigs[0].itemsCount, "bottom-2")}
 
       {/* Icon rows */}
       {iconRows.map(renderIconRow)}
